@@ -26,7 +26,7 @@ const Contact = () => {
             </h3>
             <p className="text-gray-400 mb-8">
               Feel free to reach out to me for any questions or
-              opportunities. I'll get back to you as soon as possible.
+              opportunities. I will get back to you as soon as possible.
             </p>
 
             <div className="space-y-6">

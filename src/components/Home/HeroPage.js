@@ -15,7 +15,7 @@ const HeroPage = () => {
       <div className="container mx-auto px-4 z-10 md:py-20">
         <div className="flex flex-col-reverse md:flex-row items-center">
           <div className="md:w-1/2 mb-10  ">
-            <p className="text-purple-400 font-medium mb-4">👋 Hello, I'm</p>
+            <p className="text-purple-400 font-medium mb-4">👋 Hello, I am</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
                 Gaurav Narnaware
