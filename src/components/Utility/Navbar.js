@@ -1,42 +1,30 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import {
-    Mail,
-    Menu,
-    X,
-    Briefcase,
-    FileCode,
-    Home,
-  } from "lucide-react";
-const Navbar = () => {
+import { Mail, Menu, X, Briefcase, FileCode, Home } from "lucide-react";
+import { menuItems } from "@/JSONData";
 
+
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-          setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
-    
-      const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-      };
-    
-      const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-      };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div>
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg"
-            : "bg-transparent py-5"
+          scrolled ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg" : "bg-transparent py-5"
         }`}
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
@@ -45,39 +33,18 @@ const Navbar = () => {
               GN
             </span>
           </Link>
-
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              href="/"
-              className="text-gray-300 hover:text-white transition-colors relative group"
-            >
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/Projects"
-              className="text-gray-300 hover:text-white transition-colors relative group"
-            >
-              Projects
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/Experiences"
-              className="text-gray-300 hover:text-white transition-colors relative group"
-            >
-              Experiences
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="#contact"
-              className="text-gray-300 hover:text-white transition-colors relative group"
-            >
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-white transition-colors relative group"
+              >
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
           </nav>
-
           <div className="hidden md:block">
             <a
               href="#contact"
@@ -86,17 +53,17 @@ const Navbar = () => {
               Hire Me
             </a>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white focus:outline-none"
-            onClick={toggleSidebar}
-          >
+          <button className="md:hidden text-white focus:outline-none" onClick={toggleSidebar}>
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>
-      {/* Mobile Sidebar */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={toggleSidebar}
+        ></div>
+      )}
       <div
         className={`fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
@@ -111,34 +78,16 @@ const Navbar = () => {
           </button>
         </div>
         <nav className="p-4">
-          <Link
-            href="/"
-            className="block py-2 text-gray-300 hover:text-white transition-colors"
-          >
-            <Home className="inline-block mr-2" size={20} />
-            Home
-          </Link>
-          <Link
-            href="/Projects"
-            className="block py-2 text-gray-300 hover:text-white transition-colors"
-          >
-            <FileCode className="inline-block mr-2" size={20} />
-            Projects
-          </Link>
-          <Link
-            href="/Experiences"
-            className="block py-2 text-gray-300 hover:text-white transition-colors"
-          >
-            <Briefcase className="inline-block mr-2" size={20} />
-            Experiences
-          </Link>
-          <Link
-            href="#contact"
-            className="block py-2 text-gray-300 hover:text-white transition-colors"
-          >
-            <Mail className="inline-block mr-2" size={20} />
-            Contact
-          </Link>
+          {menuItems.map(({ name, href, icon }) => (
+            <Link
+              key={name}
+              href={href}
+              className="block py-2 text-gray-300 hover:text-white transition-colors flex items-center"
+            >
+              <span className="mr-2">{icon}</span>
+              {name}
+            </Link>
+          ))}
         </nav>
       </div>
     </div>

@@ -1,40 +1,9 @@
-"use client"
+"use client";
 
-import { Briefcase } from "lucide-react"
+import { experiences } from "@/JSONData";
+import { Briefcase } from "lucide-react";
 
 export default function ExperiencesPage() {
-  const experiences = [
-    {
-      title: "Development Lead",
-      company: "Google Developer Group (GDG) On Campus",
-      period: "2024 – Present",
-      description: [
-        "Led a team of developers to create solutions for GDG events and activities, achieving Tier 1 position in Google Cloud Study Jam.",
-        "Managed the development of a platform for listing GDG events and publishing blogs, including a dashboard for website management and bulk emailing functionality with custom templates.",
-        "Collaborated with cross-functional teams to ensure timely delivery of projects and maintain high-quality standards.",
-      ],
-    },
-    {
-      title: "Full Stack Developer",
-      company: "EboNow (Contract)",
-      period: "2 Months",
-      description: [
-        "Contributed to the development of a Party Decor Application using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
-        "Enhanced application functionality and user experience, ensuring responsiveness and scalability.",
-        "Worked closely with the design and product teams to implement features and fix bugs.",
-      ],
-    },
-    {
-      title: "Salesforce Intern",
-      company: "ITNetworkz",
-      period: "1 Month",
-      description: [
-        "Gained hands-on experience with Salesforce CRM and cloud-based application development.",
-        "Learned about Salesforce's ecosystem, including customization, workflows, and data management.",
-      ],
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-white py-20">
       <div className="container mx-auto px-4">
@@ -70,6 +39,5 @@ export default function ExperiencesPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

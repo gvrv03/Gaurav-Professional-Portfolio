@@ -1,4 +1,14 @@
-import { ArrowRight, ChevronRight, Code, Download, FileCode, Github, Linkedin, Mail } from "lucide-react";
+import { socialLinks } from "@/JSONData";
+import {
+  ArrowRight,
+  ChevronRight,
+  Code,
+  Download,
+  FileCode,
+  Github,
+  Linkedin,
+  Mail,
+} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -29,48 +39,34 @@ const HeroPage = () => {
               in building dynamic, responsive, and scalable web applications.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex  gap-4">
               <a
                 href="#contact"
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 flex items-center"
+                className="px-8 py-3 w-full md:w-fit rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 flex items-center"
               >
                 Hire Me <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
                 href="GauravResume.pdf"
                 download={true}
-                className="px-8 py-3 rounded-full border border-purple-500/30 hover:border-purple-500/60 transition-all duration-300 flex items-center"
+                className="px-8 py-3 w-full md:w-fit rounded-full border border-purple-500/30 hover:border-purple-500/60 transition-all duration-300 flex items-center"
               >
                 Download CV <Download className="ml-2 h-4 w-4" />
               </a>
             </div>
 
-            <div className="flex space-x-5 mt-8">
-              <a
-                href="https://linkedin.com/in/gaurav-narnaware"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors duration-300 group"
-              >
-                <Linkedin className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a
-                href="https://github.com/gaurav-narnaware"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors duration-300 group"
-              >
-                <Github className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a
-                href="mailto:gxurav.work@gmail.com"
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors duration-300 group"
-              >
-                <Mail className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-                <span className="sr-only">Email</span>
-              </a>
+            <div className="flex w-full justify-center md:justify-start items-center  space-x-5 mt-8">
+              {socialLinks.map(({ href, icon, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors duration-300 group"
+                >
+                  {icon} <span className="sr-only">{label}</span>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -99,7 +95,7 @@ const HeroPage = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute hidden bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a
           href="#about"
           className="flex flex-col items-center text-gray-400 hover:text-white transition-colors"

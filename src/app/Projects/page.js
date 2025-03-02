@@ -4,50 +4,9 @@ import { useState, useMemo } from "react";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import ProjectCard from "@/components/Utility/ProjectCard";
+import { projects } from "@/JSONData";
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      title: "GDGC Platform",
-      description:
-        "A platform for listing GDG events and publishing blogs, featuring a dashboard for website management and bulk emailing functionality with custom templates.",
-      technologies: ["Next.js", "Node.js", "MongoDB"],
-      category: "fullstack",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      title: "DSY Consultancy",
-      description:
-        "An application for diploma students to find engineering colleges based on their percentage, category, and other criteria.",
-      technologies: ["React.js", "Node.js", "MongoDB"],
-      category: "fullstack",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      title: "Campus Plant Lens",
-      description:
-        "An application to manage plants and flowers within an institute, including QR code generation for plant identification.",
-      technologies: ["React.js", "Node.js", "MongoDB"],
-      category: "fullstack",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      title: "Digital Product Selling Application",
-      description:
-        "An application where admins can create and publish digital products, and users can purchase them using the Razorpay payment gateway.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
-      category: "ecommerce",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-    {
-      title: "Blog Application",
-      description:
-        "A personal blog application where only the admin can create and publish blogs, and users can save and view them.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Rich Text Editor"],
-      category: "cms",
-      image: "/placeholder.svg?height=300&width=500",
-    },
-  ];
 
   const categories = useMemo(() => {
     const cats = [
@@ -69,7 +28,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-white py-20">
-      <div className="container mx-auto  flex-col gap-5 px-5 flex">
+      <div className="container mx-auto  flex-col gap-10 px-5 flex">
         <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
           My Projects
         </h1>
