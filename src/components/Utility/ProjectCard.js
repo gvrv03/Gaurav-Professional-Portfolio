@@ -4,21 +4,21 @@ import React from "react";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="bg-gray-800/50 p-5 flex-col flex justify-between gap-5 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 shadow-xl hover:shadow-purple-500/20 transition-all duration-300 hover:transform hover:-translate-y-2 group">
-      {/* <div className="relative h-56 overflow-hidden">
+    <div className="bg-gray-800/50 p-3 flex-col flex  gap-5  backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 shadow-xl hover:shadow-purple-500/20 transition-all duration-300 hover:transform hover:-translate-y-2 group">
+      <div className="relative rounded-md overflow-hidden">
         <Image
           src={project.image || "/placeholder.svg"}
           alt={project.title}
           width={500}
           height={300}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full  object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-      </div> */}
+      </div>
       <h3 className="text-xl font-bold  group-hover:text-purple-400 transition-colors duration-300">
         {project.title}
       </h3>
-      <p className="text-gray-400 texjus  line-clamp-3">
+      <p className="text-gray-400 texjus  ">
         {project.description}
       </p>
       <div className="flex flex-wrap gap-2 ">

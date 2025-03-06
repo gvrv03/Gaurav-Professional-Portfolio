@@ -31,47 +31,103 @@ export const socialLinks = [
     label: "Email",
   },
 ];
-
 export const projects = [
   {
-    title: "GDGC Platform",
+    title: "Lost & Found Portal",
     description:
-      "A platform for listing GDG events and publishing blogs, featuring a dashboard for website management and bulk emailing functionality with custom templates.",
-    technologies: ["Next.js", "Node.js", "MongoDB"],
-    category: "fullstack",
-    image: "/placeholder.svg?height=300&width=500",
+      "A platform for students to report lost and found items, with a dashboard for admins to manage listings.",
+    technologies: ["Next.js", "AppWrite"],
+    category: "Fullstack",
+    image: "/Projects/FoundUs.png",
   },
   {
-    title: "DSY Consultancy",
+    title: "GDGC Event Platform",
     description:
-      "An application for diploma students to find engineering colleges based on their percentage, category, and other criteria.",
+      "A platform to list GDG events, publish blogs, and send bulk emails with custom templates for outreach.",
+    technologies: ["Next.js", "Node.js", "MongoDB"],
+    category: "Fullstack",
+    image: "/Projects/GDGPlatform.png",
+  },
+  {
+    title: "DSY College Finder",
+    description:
+      "An application for diploma students to find engineering colleges based on their eligibility criteria.",
     technologies: ["React.js", "Node.js", "MongoDB"],
-    category: "fullstack",
-    image: "/placeholder.svg?height=300&width=500",
+    category: "Fullstack",
+    image: "/Projects/DSYConsultancy.png",
+  },
+
+  {
+    title: "Digital Product Store",
+    description:
+      "An application where admins can sell digital products, with payments handled via Razorpay API.",
+    technologies: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
+    category: "Fullstack",
+    image: "/Projects/WealthSummit.png",
   },
   {
     title: "Campus Plant Lens",
     description:
-      "An application to manage plants and flowers within an institute, including QR code generation for plant identification.",
+      "An application for plant management within a campus, featuring QR codes for plant identification.",
     technologies: ["React.js", "Node.js", "MongoDB"],
-    category: "fullstack",
-    image: "/placeholder.svg?height=300&width=500",
+    category: "Fullstack",
+    image: "/Projects/CampusPlantLense.png",
   },
   {
-    title: "Digital Product Selling Application",
+    title: "English Jr. College",
     description:
-      "An application where admins can create and publish digital products, and users can purchase them using the Razorpay payment gateway.",
-    technologies: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
-    category: "ecommerce",
-    image: "/placeholder.svg?height=300&width=500",
+      "A website for an educational institution to manage events, updates, and student information.",
+    technologies: ["WordPress"],
+    category: "Client",
+    image: "/Projects/ENCNer.png",
   },
   {
-    title: "Blog Application",
+    title: "Wealth Summit",
     description:
-      "A personal blog application where only the admin can create and publish blogs, and users can save and view them.",
+      "A Ecommerce website for a startup to sell their digital products.",
+    technologies: ["WordPress"],
+    category: "Client",
+    image: "/Projects/wealthx.png",
+  },
+  {
+    title: "Savali NGO Website",
+    description:
+      "A platform for an NGO to manage data, share events, and provide updates about their initiatives.",
+    technologies: ["Next.js", "Tailwind CSS"],
+    category: "Client",
+    image: "/Projects/Savali.png",
+  },
+
+  {
+    title: "Hyggex Landing Page",
+    description:
+      "A sleek and responsive landing page designed for a startup to showcase its services effectively.",
+    technologies: ["React.js", "Tailwind CSS"],
+    category: "Landing Page",
+    image: "/Projects/hyggex.png",
+  },
+  {
+    title: "AppforgeX Website",
+    description:
+      "A modern landing page designed for a startup, built with performance and UI optimization in mind.",
+    technologies: ["Next.js", "Tailwind CSS"],
+    category: "Landing Page",
+    image: "/Projects/appforgex.png",
+  },
+  {
+    title: "Portfolio Website",
+    description: "A portfolio website for a developer to showcase their projects and skills.",
+    technologies: ["Next.js", "Tailwind CSS"],
+    category: "Landing Page",
+    image: "/Projects/PortfolioLandingPage.png",
+  },
+  {
+    title: "Personal Blog App",
+    description:
+      "A blogging platform where only the admin can create and publish content, while users can save posts.",
     technologies: ["React.js", "Node.js", "MongoDB", "Rich Text Editor"],
-    category: "cms",
-    image: "/placeholder.svg?height=300&width=500",
+    category: "Fullstack",
+    image: "/Projects/BlogApp.png",
   },
 ];
 
@@ -80,29 +136,24 @@ export const experiences = [
     title: "Development Lead",
     company: "Google Developer Group (GDG) On Campus",
     period: "2024 – Present",
+    image: "/GDGLogo.png",
+
     description: [
-      "Led a team of developers to create solutions for GDG events and activities, achieving Tier 1 position in Google Cloud Study Jam.",
-      "Managed the development of a platform for listing GDG events and publishing blogs, including a dashboard for website management and bulk emailing functionality with custom templates.",
-      "Collaborated with cross-functional teams to ensure timely delivery of projects and maintain high-quality standards.",
+      "Organized a National Level Hackathon for GDG On Campus, attracting 250+ participants. Developed a registration system with payment integration and QR code verification.",
+      "Led a development team for GDG events, securing a Tier 1 position in the Google Cloud Study Jam.",
+      "Managed the creation of a platform for listing GDG events, publishing blogs, and providing a dashboard for website management with bulk emailing and custom templates.",
+      "Worked with cross-functional teams to ensure timely project delivery and maintain high-quality standards.",
     ],
   },
   {
     title: "Full Stack Developer",
     company: "EboNow (Contract)",
     period: "2 Months",
+    image: "/eboLogo.webp",
     description: [
       "Contributed to the development of a Party Decor Application using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
       "Enhanced application functionality and user experience, ensuring responsiveness and scalability.",
       "Worked closely with the design and product teams to implement features and fix bugs.",
-    ],
-  },
-  {
-    title: "Salesforce Intern",
-    company: "ITNetworkz",
-    period: "1 Month",
-    description: [
-      "Gained hands-on experience with Salesforce CRM and cloud-based application development.",
-      "Learned about Salesforce's ecosystem, including customization, workflows, and data management.",
     ],
   },
 ];

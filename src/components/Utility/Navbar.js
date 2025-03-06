@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Mail, Menu, X, Briefcase, FileCode, Home } from "lucide-react";
 import { menuItems } from "@/JSONData";
-
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,17 +23,14 @@ const Navbar = () => {
   return (
     <div>
       <header
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg" : "bg-transparent py-5"
+        className={`fixed  w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg"
+            : "bg-transparent py-5"
         }`}
       >
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
-              GN
-            </span>
-          </Link>
-          <nav className="hidden md:flex space-x-8">
+        <div className="container mx-auto px-4 flex py-2 justify-between items-center">
+          <nav className="hidden  md:flex space-x-8">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
@@ -45,7 +42,13 @@ const Navbar = () => {
               </Link>
             ))}
           </nav>
-          <div className="hidden md:block">
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={toggleSidebar}
+          >
+            {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          <div className="">
             <a
               href="#contact"
               className="px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
@@ -53,9 +56,6 @@ const Navbar = () => {
               Hire Me
             </a>
           </div>
-          <button className="md:hidden text-white focus:outline-none" onClick={toggleSidebar}>
-            {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </header>
       {isSidebarOpen && (
